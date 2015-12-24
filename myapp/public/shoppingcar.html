@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <script src="jquery.min.js"></script>
+    <script src="shoppingcar.js"></script>
+    <script src="lodash.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container" id="Receipt">
+    </div>
+</body>
+</html>
+
+<script type="text/html" id="charts">
+    <div class="container">
+        <div class="col-md-2">
+            <img src="image/店铺logo.jpg" class="img-circle" width="=80" height="80">
+            <h4>没良心店铺</h4>
+        </div>
+        <div class="col-md-2">
+            <h1>购物车</h1>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <h2></h2>
+            <input type="搜索商品" class="search items" id="search" placeholder="搜索商品">
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-2">
+            <h4>全部商品</h4>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="order_info">
+            <table class="table table-hover" id="gift_table">
+                <thead><tr>
+                <th class="col-md-3 name">商品</th>
+                <th class="col-md-3 price">单价</th>
+                <th class="col-md-3 count">数量</th>
+                <th class="col-md-3 total">总计</th>
+                </tr></thead>
+                <tbody>
+                <% _.forEach(Receipt.Order,function(order) { %>
+                <tr>
+                    <td><%- order.name %></td>
+                    <td><%- order.price %>元</td>
+                    <td><%- order.count+order.unit %></td>
+                    <td><%- order.total %>元</td>
+                </tr><% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-2">
+            <h4>洒泪赠送</h4>
+        </div>
+        <div class="col-md-7"><h4></h4></div>
+    </div>
+    <div class="container">
+        <div class="row" id="gift_info">
+            <table class="table table-hover" id="gift_table">
+                <thead><tr>
+                <th class="col-md-3 name">商品</th>
+                <th class="col-md-3 price">单价</th>
+                <th class="col-md-3 count">数量</th>
+                <th class="col-md-3 total">总计</th>
+                </tr></thead>
+                <tbody>
+                <% _.forEach(Receipt.Gift,function(gift) { %>
+                <tr>
+                    <td><%- gift.name %></td>
+                    <td><%- gift.price %>元</td>
+                    <td><%- gift.count+gift.unit %></td>
+                    <td><%- gift.total %>元</td>
+                </tr><% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container" id="caculate_info">
+        <div class="col-md-8"><h3></h3></div>
+        <div class="col-md-4" id="caculate_info">
+            <h3 id="sum">总价：<%- Receipt.Caculate.Sum %>元</h3>
+            <h3 id="gift_sum">节省：<%-Receipt.Caculate.gifts_price %>元</h3>
+            <button type="button" class="btn btn-info">去结算</button>
+        </div>
+    </div>
+</script>

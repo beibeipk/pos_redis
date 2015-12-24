@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <script src="jquery.min.js"></script>
+    <script src="pos.js"></script>
+    <script src="lodash.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <div class="row" style="text-align:center";>
+        <img src="image/店铺logo.jpg" class="img-circle" width="=80" height="80">
+        <h4>没良心店铺</h4>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="col-md-3" style="text-align:center";><h4><button type="button" class="btn btn-info">买家须知</button></h4></div>
+            <div class="col-md-3" style="text-align:center";><h4><button type="button" class="btn btn-info">全部商品</button></h4></div>
+            <div class="col-md-3" style="text-align:center";><h4><button type="button" class="btn btn-info">限时秒杀</button></h4></div>
+            <div class="col-md-3" style="text-align:center";><h4><button type="button" class="btn btn-info">会员专区</button></h4></div>
+        </div>
+        <div class="col-md-5">
+            <input type="搜索商品" class="form-control" id="search" placeholder="搜索商品">
+        </div>
+        <div class="col-md-3">
+            <button type="button" class="btn btn-default btn-lg">
+                <a href="/static/shoppingcar.html" target="_blank">
+                 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 我的购物车</a>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row"><h4>热销产品</h4></div>
+    <div class="row">
+        <div class="col-md-4 items" style="text-align:center" data-barcode='ITEM000003';>
+            <img src="image/lichi.jpg" class="img-rounded" width="200" height="160"/>
+            <h4> <button type="button" class="buy_button">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 购买</button></h4>
+        </div>
+        <div class="col-md-4 items" style="text-align:center" data-barcode='ITEM000004';>
+            <img src="image/battery.jpg" class="img-rounded" width="200" height="160"/>
+            <h4>            <button type="button" class="buy_button">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>购买</button></h4>
+        </div>
+        <div class="col-md-4 items" style="text-align:center" data-barcode='ITEM000002';>
+            <img src="image/apple.jpg" class="img-rounded" width="200" height="160"/>
+            <h4>            <button type="button" class="buy_button">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 购买</button></h4>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row"><h4>特价商品</h4></div>
+    <div class="row">
+        <div class="col-md-4 items promotions" style="text-align:center" data-barcode='ITEM000000';>
+            <img src="image/coke.jpg" class="img-rounded" width="200" height="160"/>
+            <h4> <button type="button" class="buy_button">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 购买</button></h4>
+        </div>
+        <div class="col-md-4 items promotions" style="text-align:center" data-barcode='ITEM000001';>
+            <img src="image/sprite.jpg" class="img-rounded" width="200" height="160"/>
+            <h4> <button type="button" class="buy_button">
+                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 购买</button></h4>
+        </div>
+        <div class="col-md-4 items promotions" style="text-align:center" data-barcode='ITEM000005';>
+            <img src="image/cup_noodles.jpg" class="img-rounded" width="200" height="160"/>
+            <h4> <button type="button" class="buy_button"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> 购买
+            </button></h4>
+        </div>
+    </div>
+</div>
+</body>
+</html>
